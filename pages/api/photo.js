@@ -4,7 +4,7 @@ const fs = require('fs')
 export default (req, res) => {
   const context = require.context('../../public/images', true)
   let photos = context.keys()
-  let photo = photos[Math.floor(Math.random() * photos.length)]
+  let photo = photos[Math.floor(Math.random() * photos.length)].replace('./', 'https://change-my-pfp.now.sh/images/') 
   res.statusCode = 200
   res.json({ photo: photo })
 }
