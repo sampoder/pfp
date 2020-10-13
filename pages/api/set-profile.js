@@ -18,5 +18,5 @@ export default async (req, res) => {
     image: image.data,
     token: process.env.SLACK_TOKEN,
   });
-  res.send(slackRequest);
+  res.redirect('https://change-my-pfp.now.sh');
 };
