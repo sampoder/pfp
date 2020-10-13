@@ -15,14 +15,14 @@ export default function Home() {
         </h1>
         <div className={styles.grid}>
           <a
-            href={"https://hackclub.slack.com/team/" }
+            href={"/api/photo" }
             className={styles.card + ' post'}
           >
             <h3>Get a random image &rarr;</h3>
             <p>I don't know why you would want it, but you can have it.</p>
           </a>
           <a
-            href={"https://scrapbook.hackclub.com/"}
+            href={"/api/set-profile"}
             className={styles.card + ' post'}
           >
             <h3>Change my avatar &rarr;</h3>
@@ -31,7 +31,7 @@ export default function Home() {
         </div>
       </main>
       <footer className={styles.footer}>
-        Meet a random Hack Clubber, built by @sampoder!
+        <a href="https://github.com/sampoder/pfp">Open sourced here.</a>
       </footer>
     </div>
   );
