@@ -7,9 +7,9 @@ export default async (req, res) => {
     responseType: "arraybuffer",
   });
   console.log(Array.from(image.data));
-  const set = await client.users.setPhoto({
+  const slackRequest = await client.users.setPhoto({
     image: image.data,
     token: process.env.SLACK_TOKEN,
   });
-  res.send(set);
+  res.send(slackRequest);
 };
