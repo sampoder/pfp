@@ -31,7 +31,7 @@ export default function Home() {
         </div>
       </main>
       <footer className={styles.footer}>
-        <a href="https://github.com/sampoder/pfp">Open sourced here.</a>
+        <a href="https://github.com/sampoder/pfp">Hi there!! I'm open source!</a>
       </footer>
     </div>
   );
