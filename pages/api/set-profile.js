@@ -9,8 +9,7 @@ export default async (req, res) => {
   console.log(Array.from(image.data));
   const set = await client.users.setPhoto({
     image: image.data,
-    token:
-      "xoxp-2210535565-906804643779-1422898800979-2e5ab8986510325020b0b9f68ef3e8b2",
+    token: process.env.SLACK_TOKEN,
   });
   res.send(set);
 };
