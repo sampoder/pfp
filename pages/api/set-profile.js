@@ -18,5 +18,9 @@ export default async (req, res) => {
     image: image.data,
     token: process.env.SLACK_TOKEN,
   });
+  const slackRequest = await client.users.setPhoto({
+    image: image.data,
+    token: process.env.STU_CO_SLACK_TOKEN,
+  });
   res.redirect('https://change-my-pfp.now.sh');
 };
