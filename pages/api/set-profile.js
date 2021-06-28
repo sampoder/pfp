@@ -14,9 +14,9 @@ export default async (req, res) => {
     responseType: "arraybuffer",
   });
   await db.set('image', photo)
-  const slackRequest = await client.users.setPhoto({
-    image: image.data,
-    token: process.env.SLACK_TOKEN,
-  });
+  // const slackRequest = await client.users.setPhoto({
+  //  image: image.data,
+  //  token: process.env.SLACK_TOKEN,
+  // });
   res.redirect('https://change-my-pfp.now.sh');
 };
