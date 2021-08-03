@@ -13,7 +13,6 @@ export default async (req, res) => {
   const image = await axios.get(photo, {
     responseType: "arraybuffer",
   });
-  await db.set('image', photo)
   const slackRequest = await client.users.setPhoto({
     image: image.data,
     token: process.env.SLACK_TOKEN,
