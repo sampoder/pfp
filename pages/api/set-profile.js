@@ -17,5 +17,6 @@ export default async (req, res) => {
     image: image.data,
     token: process.env.SLACK_TOKEN,
   });
+  await db.set('image', photo)
   res.redirect('https://change-my-pfp.now.sh');
 };
