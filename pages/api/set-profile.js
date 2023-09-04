@@ -5,8 +5,6 @@ const db = new S1(process.env.S1_TOKEN)
 
 export default async (req, res) => {
   const client = new WebClient();
-
-  
   const context = require.context('../../public/images', true)
   let photos = context.keys()
   let photo = photos[Math.floor(Math.random() * photos.length)].replace('./', 'https://change-my-pfp.now.sh/images/')
