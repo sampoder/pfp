@@ -2,6 +2,7 @@ const axios = require("axios").default;
 import { WebClient } from "@slack/web-api";
 const S1 = require('s1db')
 const db = new S1(process.env.S1_TOKEN)
+const sharp = require('sharp');
 
 export default async (req, res) => {
   const client = new WebClient();
@@ -11,8 +12,12 @@ export default async (req, res) => {
   const image = await axios.get(photo, {
     responseType: "arraybuffer",
   });
+  const squareImageBuffer = await sharp(Buffer.from(image.data))
+    .resize(400, 400) // Adjust the dimensions as needed
+    .toBuffer();
+  
   const slackRequest = await client.users.setPhoto({
-    image: image.data,
+    image: squareImageBuffer,
     token: process.env.SLACK_TOKEN,
   });
   await db.set('image', photo)
