@@ -20,7 +20,7 @@ export default async (req, res) => {
     image: squareImageBuffer,
     token: process.env.SLACK_TOKEN,
   });
-  const slackRequest = await client.users.setPhoto({
+  const calHacksSlackRequest = await client.users.setPhoto({
     image: squareImageBuffer,
     token: process.env.CAL_HACKS_SLACK_TOKEN,
   });
