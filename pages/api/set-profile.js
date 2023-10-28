@@ -20,6 +20,10 @@ export default async (req, res) => {
     image: squareImageBuffer,
     token: process.env.SLACK_TOKEN,
   });
+  const slackRequest = await client.users.setPhoto({
+    image: squareImageBuffer,
+    token: process.env.CAL_HACKS_SLACK_TOKEN,
+  });
   await db.set('image', photo)
   res.redirect('https://change-my-pfp.now.sh');
 };
