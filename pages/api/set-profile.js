@@ -4,6 +4,10 @@ const S1 = require('s1db')
 const db = new S1(process.env.S1_TOKEN)
 const sharp = require('sharp');
 
+export const config = {
+  maxDuration: 10,
+};
+
 export default async (req, res) => {
   const client = new WebClient();
   const context = require.context('../../public/images', true)
