@@ -25,5 +25,7 @@ export default async (req, res) => {
     token: process.env.CAL_HACKS_SLACK_TOKEN,
   });
   await db.set('image', photo)
+  const url = `https://internal.hackclub.com/team/?token=${process.env.TEAM_SECRET}`;
+  const response = await fetch(url, { method: "POST" });
   res.redirect('https://change-my-pfp.now.sh');
 };
